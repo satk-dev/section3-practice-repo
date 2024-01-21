@@ -7,10 +7,8 @@ jobs:
     runs-on:
       ubuntu-latest
     steps:
-      - name: Output event details
-        run: echo "${{ toJSON(github.event.issue.labels.*.name) }}"
       - name: Output Github Issues
-        run: echo "${{ toJSON(github.event.issue) }}"
+        run: echo "${{ toJSON(github.event) }}"
 
 # This was my original attempt 
 # name: Github Issues
