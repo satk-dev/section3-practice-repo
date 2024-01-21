@@ -1,13 +1,28 @@
 name: Github Issues
 on:
-  workflow_dispatch
+  issues
 
 jobs: 
-  info:
+  output-info:
     runs-on:
       ubuntu-latest
     steps:
-      - name: Output Github Issue Label
-        run: echo ${{ toJSON(github.event.issue.label) }}
+      - name: Output event details
+        run: echo "${{ toJSON(github.event.issue.label) }}""
       - name: Output Github Issues
-        run: echo ${{ toJSON(github.event.issue) }}
+        run: echo "${{ toJSON(github.event.issue) }}"
+
+# This was my original attempt 
+# name: Github Issues
+# on:
+#   workflow_dispatch
+
+# jobs: 
+#   info:
+#     runs-on:
+#       ubuntu-latest
+#     steps:
+#       - name: Output Github Issue Label
+#         run: echo ${{ toJSON(github.event.issue.label) }}
+#       - name: Output Github Issues
+#         run: echo ${{ toJSON(github.event.issue) }}
